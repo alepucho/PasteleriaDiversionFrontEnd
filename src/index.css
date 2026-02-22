@@ -1,0 +1,32 @@
+:root {
+  --primary-color: #E53935; /* Rojo Pokémon */
+  --secondary-color: #1976D2; /* Azul Pokémon */
+  --accent-color: #FBC02D; /* Amarillo Pokémon */
+  --background-color: #F5F5F5; /* Gris claro */
+  --card-background: #FFFFFF; /* Blanco */
+  --text-color: #212121; /* Negro casi */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,47 @@
+.grid-list {
+  margin: 32px auto;
+  padding: 16px;
+  background: linear-gradient(135deg, #fffafc 0%, #ffe4e1 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 18px rgba(248, 187, 208, 0.18);
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.titulo {
+  color: #d81b60;
+  font-family: 'Quicksand', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.cuerpo {
+  color: #6d4c41;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.modelo-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Boton {
+  border: none !important;
+  background: linear-gradient(90deg, #f8bbd0 0%, #f48fb1 100%) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 18px !important;
+  padding: 10px 24px !important;
+  text-align: center !important;
+  box-shadow: 0 2px 8px rgba(248, 187, 208, 0.2);
+}

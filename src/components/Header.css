@@ -1,0 +1,45 @@
+.pasteleria-navbar {
+  margin-bottom: 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(248, 187, 208, 0.18);
+}
+
+.pasteleria-navbar .MuiAppBar-root {
+  background: linear-gradient(90deg, #f8bbd0 0%, #f48fb1 50%, #ffe4e1 100%);
+  color: #fff;
+  box-shadow: none;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0;
+}
+
+.image-container img {
+  max-height: 100px;
+  filter: drop-shadow(0 2px 8px rgba(248, 187, 208, 0.3));
+  border-radius: 16px;
+  background: #fffafc;
+  border: 2px solid #f8bbd0;
+  padding: 8px;
+}
+
+.MuiButton-root {
+  border-radius: 18px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  margin: 0 8px !important;
+  background: linear-gradient(90deg, #f8bbd0 0%, #f48fb1 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(248, 187, 208, 0.2);
+  transition: background-color 0.3s !important;
+}
+
+.MuiButton-root:hover {
+  background: linear-gradient(90deg, #f48fb1 0%, #f8bbd0 100%) !important;
+  color: #fff !important;
+}
