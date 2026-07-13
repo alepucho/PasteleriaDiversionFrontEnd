@@ -1,3 +1,8 @@
+// Obtener pedidos filtrados por cliente
+export async function fetchPedidosByCliente(clienteId) {
+  const response = await axios.get(`${API_BASE_URL}/pedido/?cliente=${clienteId}`);
+  return response.data;
+}
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { PriceChange } from "@mui/icons-material";
 import axios from "axios";
@@ -31,22 +36,22 @@ export async function createPedido(pedidoData) {
     ...pedidoData,
     picture: pictureBase64,
   };
-  const response = await axios.post(`${API_BASE_URL}/pedidos/`, payload);
+  const response = await axios.post(`${API_BASE_URL}/pedido/`, payload);
   return response.data;
 }
 
 export async function fetchPedidos() {
-  const response = await axios.get(`${API_BASE_URL}/pedidos/`);
+  const response = await axios.get(`${API_BASE_URL}/pedido/`);
   return response.data;
 }
 
 export async function deletePedido(pedidoId) {
-  const response = await axios.delete(`${API_BASE_URL}/pedidos/${pedidoId}/`);
+  const response = await axios.delete(`${API_BASE_URL}/pedido/${pedidoId}/`);
   return response.data;
 }
 
 export async function getPedidoById(pedidoId) {
-  const response = await axios.get(`${API_BASE_URL}/pedidos/${pedidoId}/`);
+  const response = await axios.get(`${API_BASE_URL}/pedido/${pedidoId}/`);
   return response.data;
 }
 
@@ -65,6 +70,6 @@ export async function updatePedido(pedidoId, pedidoData, pictureChanged = false)
 
   console.log("payload enviado:", payload);
 
-  const response = await axios.patch(`${API_BASE_URL}/pedidos/${pedidoId}/`, payload);
+  const response = await axios.patch(`${API_BASE_URL}/pedido/${pedidoId}/`, payload);
   return response.data;
 }

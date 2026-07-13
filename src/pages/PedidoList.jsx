@@ -36,7 +36,7 @@ export default function PedidoList() {
     };
 
     const handleDetailsPedido = (pedidoId) => {
-        navigate(`/pedidos/${pedidoId}`);
+        navigate(`/pedido/${pedidoId}`);
     };
     if (loading) {
         return (

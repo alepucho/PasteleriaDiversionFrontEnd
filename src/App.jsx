@@ -19,11 +19,11 @@ function App() {
           {/* Rutas y componentes irían aquí */}
           <Routes>
             <Route path="/" element={<PedidoList />} />
-            <Route path="/pedidos/:id" element={<PedidoDetail />} />
+            <Route path="/pedido/:id" element={<PedidoDetail />} />
             <Route path="/add-pedido" element={<PedidoForm />} />
             <Route path="/edit-pedido/:id" element={<PedidoForm />} />
-            <Route path="/clientes" element={<ClienteList />} />
-            <Route path="/clientes/:id" element={<ClienteDetail />} />
+            <Route path="/cliente" element={<ClienteList />} />
+            <Route path="/cliente/:id" element={<ClienteDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/add-cliente" element={<ClienteForm />} />
             <Route path="/edit-cliente/:id" element={<ClienteForm />} />

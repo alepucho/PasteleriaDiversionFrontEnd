@@ -25,7 +25,7 @@ export default function Header() {
                         </Toolbar>
                         <Toolbar>
                             <Button color="inherit" href="/">Inicio</Button>
-                            <Button color="inherit" href="/clientes">Clientes</Button>
+                            <Button color="inherit" href="/cliente">Clientes</Button>
                             {isLoggedIn && (
                                 <>
                                     <Button color="inherit" href="/add-pedido">Crear Pedido</Button>

@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getClienteById } from '../services/clienteService';
+import { fetchPedidosByCliente } from '../services/pedidoService';
 import './ClienteDetail.css';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -10,6 +11,8 @@ export default function ClienteDetail() {
     const navigate = useNavigate();
     const [cliente, setCliente] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [pedidos, setPedidos] = useState([]);
+    const [loadingPedidos, setLoadingPedidos] = useState(true);
 
     useEffect(() => {
         getClienteById(id)
@@ -21,12 +24,20 @@ export default function ClienteDetail() {
                 alert('Error al cargar el cliente');
             })
             .finally(() => setLoading(false));
+
+        fetchPedidosByCliente(id)
+            .then(data => {
+                setPedidos(data);
+            })
+            .catch(error => {
+                console.error('Error al cargar pedidos:', error);
+            })
+            .finally(() => setLoadingPedidos(false));
     }, [id]);
 
     if (loading) {
         return <Typography>Cargando...</Typography>;
     }
-
     if (!cliente) {
         return <Typography>Cliente no encontrado</Typography>;
     }
@@ -35,7 +46,7 @@ export default function ClienteDetail() {
         <Box sx={{ maxWidth: 500, margin: '0 auto' }}>
             <Button 
                 startIcon={<ArrowBackIcon />} 
-                onClick={() => navigate('/clientes')}
+                onClick={() => navigate('/cliente')}
                 sx={{ marginBottom: 2 }}
             >
                 Atrás
@@ -77,9 +88,19 @@ export default function ClienteDetail() {
 
                     <Box sx={{ marginTop: 2 }}>
                         <Typography variant="h6">Pedidos</Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                            {cliente.pedidos}
-                        </Typography>
+                        {loadingPedidos ? (
+                            <Typography variant="body2">Cargando pedidos...</Typography>
+                        ) : pedidos.length === 0 ? (
+                            <Typography variant="body2">No hay pedidos para este cliente.</Typography>
+                        ) : (
+                            <ul>
+                                {pedidos.map((pedido) => (
+                                    <li key={pedido.id}>
+                                        Pedido #{pedido.id} - {pedido.fecha ? pedido.fecha : ''} - {pedido.estado ? pedido.estado : ''}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </Box>
 
                     <Box sx={{ marginTop: 3, display: 'flex', gap: 1 }}>

@@ -94,9 +94,9 @@ export default function PedidoDetail() {
           </Box>
 
           <Box sx={{ marginTop: 2 }}>
-            <Typography variant="h6">Entrega</Typography>
+            <Typography variant="h6">Fecha de Entrega</Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-              {pedido.delivery}
+              {pedido.deliverydate}
             </Typography>
           </Box>
           

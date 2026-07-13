@@ -35,14 +35,14 @@ export default function ClienteList() {
     };
 
     const handleDetailsCliente = (clienteId) => {
-        navigate(`/clientes/${clienteId}`);
+        navigate(`/cliente/${clienteId}`);
     };
     if (loading) {
         return <Spinner />
     }
     return (
         <Grid container spacing={2}>
-            {trainers.map(
+            {clientes.map(
                 (cliente) => (
                     <Grid size={{ xs: 12, sm: 6, md: 4 }} key={cliente.id}>
                         <ClienteCard cliente={cliente} onDelete={handleDeleteCliente} onUpdate={handleUpdateCliente} onDetails={handleDetailsCliente} />
